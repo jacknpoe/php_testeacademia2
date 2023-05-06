@@ -17,7 +17,7 @@
 
 			if( isset( $_POST[ 'incluir']))
 			{
-				$valor = $_POST["valor"];
+				$valor = trim( $_POST["valor"]);
 
 				require_once( 'academia.php');
 				$classe_academia = new \jacknpoe\academia();
