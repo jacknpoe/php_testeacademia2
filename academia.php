@@ -64,6 +64,11 @@
 
 		function incluiAlunos( $valor = "")
 		{
+			if( $valor == '')
+			{
+				return false;	// não tem nome
+			}
+
 			$valor = str_replace( "'", "\'", str_replace( '\\', '\\\\', $valor));
 
 			// procura por um nome já existente (pra evitar duplicação por F5)
