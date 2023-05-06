@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 	<head>
-		<title>Teste da classe academia 2</title>
+		<title>Teste da classe academia 2: Incluir aluno</title>
  		<link rel="stylesheet" href="php_testeacademia2.css"/>
 		<link rel="icon" type="image/png" href="php_testeacademia2.png"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,7 +34,7 @@
 				}
 			}
 		?>
-		<h1>Teste da classe academia 2</h1>
+		<h1>Teste da classe academia 2: Incluir aluno</h1>
 
 		<form action="php_testeacademia2.php" method="POST" style="border: 0px">
 			<p>Valor: <input type="text" name="valor" style="width: 300px" value="<?php echo htmlspecialchars( $valor, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, CARACTERES); ?>" autofocus></p>
