@@ -66,6 +66,16 @@
 		{
 			$valor = str_replace( "'", "\'", str_replace( '\\', '\\\\', $valor));
 
+			// procura por um nome já existente (pra evitar duplicação por F5)
+			$resultado = $this->conexao->query( "SELECT aluno.CD_ALUNO FROM aluno WHERE aluno.NM_ALUNO = '" . $valor . "';");
+
+			$coluna = $resultado->fetch_assoc();	// coluna não será nula se achar um nome
+
+			if( $coluna)	// se achou um nome,
+			{
+				return false;	// retorna falso
+			}
+
 			$resultado = $this->conexao->query( "INSERT INTO `aluno` (`CD_ALUNO`, `NM_ALUNO`) VALUES (NULL, '" . $valor . "');");
 
 			// Checa se a query teve sucesso
