@@ -68,6 +68,23 @@
 				die("Falha ao setar: (" . $this->conexao->connect_errno . ") " . $this->conexao->connect_error);
 			}
 
+			// coloca os clientes para serem UTF-8
+			$consulta = $this->conexao->query("SET character_set_client = utf8");
+			if ( $this->conexao->errno)
+			{
+				$this->erro = "Falha ao setar.";
+				$this->erron = FALHA_AO_SETAR;
+				die("Falha ao setar: (" . $this->conexao->connect_errno . ") " . $this->conexao->connect_error);
+			}
+
+			// coloca a conexão para ser UTF-8
+			$consulta = $this->conexao->query("SET character_set_connection = utf8");
+			if ( $this->conexao->errno)
+			{
+				$this->erro = "Falha ao setar.";
+				$this->erron = FALHA_AO_SETAR;
+				die("Falha ao setar: (" . $this->conexao->connect_errno . ") " . $this->conexao->connect_error);
+			}
 
 			$this->erro = "";
 			$this->erron = SEM_FALHA;
