@@ -8,9 +8,7 @@
 	</head>
 	<body>
 		<?php
-			require_once( 'configuracoes.php');
-			$cabecalho = "Content-Type: text/html; charset=" . CARACTERES;
-			header( $cabecalho, true);
+			header( "Content-Type: text/html; charset=UTF-8", true);
 
 			$resultado = '';
 			$valor = '';
@@ -37,7 +35,7 @@
 		<h1>Teste da classe academia 2: Incluir aluno</h1>
 
 		<form action="php_testeacademia2.php" method="POST" style="border: 0px">
-			<p>Valor: <input type="text" name="valor" style="width: 300px" value="<?php echo htmlspecialchars( $valor, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, CARACTERES); ?>" autofocus></p>
+			<p>Valor: <input type="text" name="valor" style="width: 300px" value="<?php echo htmlspecialchars( $valor, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, "UTF-8"); ?>" autofocus></p>
 			<p><input type="submit" name="incluir" value="Incluir"></p>
 		</form>
 
